@@ -1,7 +1,21 @@
+import Link from 'next/link'
+import Modal from 'react-modal'
+import {useState} from 'react'
 
 
+const customStyles = {
+  content : {
+    top                   : '50%',
+    left                  : '50%',
+    right                 : 'auto',
+    bottom                : 'auto',
+    // marginRight           : '-50%',
+    transform             : 'translate(-50%, -50%)'
+  }
+};
 
 export default function Home() {
+
   return (
     <div className='font-mono bg-gray-100 h-screen'>
       <div className='max-w-xl mx-auto items-center flex flex-col'>
@@ -9,7 +23,7 @@ export default function Home() {
           <span className='text-yellow-400'> bro</span>
         </h1>
         <div className='bg-indigo-100 py-2 px-4 rounded-xl font-bold text-indigo-500'>
-          bagi duit dong..
+          <Link href='/dashboard'>bagi duit dong..</Link>
         </div>
       </div>
     </div>
