@@ -24,7 +24,7 @@ export default function Donate() {
           <div className='font-bold text-lg text-gray-700'>pesen2nya, <span className='text-yellow-400'>bro</span>:</div>
           <textarea className='w-full rounded-md p-1' rows='4'
             placeholder='ngntod lo hahaha...'></textarea>
-          {auth.user ? (<div>dari <span className='font-bold'>{auth.user.email}</span></div>):(<div></div>)}
+          {auth.user ? (<div>dari <span className='font-bold break-words'>{auth.user.email}</span></div>):(<div></div>)}
           <div className='flex font-bold justify-between mt-6'>
             <div className='bg-indigo-100 px-5 py-1 rounded-xl text-indigo-500'>5k</div>
             <div className='bg-indigo-100 px-5 py-1 rounded-xl text-indigo-500'>10k</div>
@@ -38,7 +38,7 @@ export default function Donate() {
               </button> biar anonymous
             </div>
           ) : (
-            <div className='font-bold text-md text-gray-700 mt-4 mb-4 text-center'> <Link href='login'><a className='text-yellow-400 underline'>login</a></Link> biar ga anonymous</div>
+            <div className='font-bold text-md text-gray-700 mt-4 mb-4 text-center'> <Link href='/login'><a className='text-yellow-400 underline'>login</a></Link> biar ga anonymous</div>
           )}
           
         </div>

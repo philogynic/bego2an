@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Router from 'next/router'
 import { useAuth } from '../lib/auth'
 import { useForm } from 'react-hook-form'
 import { useState } from 'react'
@@ -11,7 +12,8 @@ export default function Signup() {
   const auth = useAuth()
 
   const onSubmit = handleSubmit(async (formData) => {
-    auth.signup(formData.email, formData.password)
+    await auth.signup(formData.email, formData.password)
+    Router.push('/donate')
   })
 
 
