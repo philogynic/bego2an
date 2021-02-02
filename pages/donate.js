@@ -1,12 +1,13 @@
 import {useState} from 'react'
 import Link from 'next/link'
+import { useAuth } from '../lib/auth'
 
 
 export default function Donate() {
-  const [auth, setAuth] = useState({'id': 1, 'user_email':'sulaeman@gmuil.com'})
+  const auth = useAuth()
   
   const onClick = () => {
-    setAuth()
+    console.log(auth.user)
   }
 
   return (
@@ -23,15 +24,19 @@ export default function Donate() {
           <div className='font-bold text-lg text-gray-700'>pesen2nya, <span className='text-yellow-400'>bro</span>:</div>
           <textarea className='w-full rounded-md p-1' rows='4'
             placeholder='ngntod lo hahaha...'></textarea>
-          {auth ? (<div>dari <span className='font-bold'>{auth.user_email}</span></div>):(<div></div>)}
+          {auth.user ? (<div>dari <span className='font-bold'>{auth.user.email}</span></div>):(<div></div>)}
           <div className='flex font-bold justify-between mt-6'>
             <div className='bg-indigo-100 px-5 py-1 rounded-xl text-indigo-500'>5k</div>
             <div className='bg-indigo-100 px-5 py-1 rounded-xl text-indigo-500'>10k</div>
             <div className='bg-indigo-100 px-5 py-1 rounded-xl text-indigo-500'>50k</div>
           </div>
           <div onClick={onClick} className='bg-indigo-100 font-bold text-2xl px-5 py-1 rounded-xl text-indigo-500 text-center mt-4'>kasih duit</div>
-          {auth ? (
-            <div className='font-bold text-md text-gray-700 mt-4 mb-4 text-center'><button onClick={onClick} className='text-yellow-400 underline'>logout</button> biar anonymous</div>
+          {auth.user ? (
+            <div className='font-bold text-md text-gray-700 mt-4 mb-4 text-center'>
+              <button onClick={() => {auth.signout()}} className='text-yellow-400 underline'>
+                logout
+              </button> biar anonymous
+            </div>
           ) : (
             <div className='font-bold text-md text-gray-700 mt-4 mb-4 text-center'> <Link href='login'><a className='text-yellow-400 underline'>login</a></Link> biar ga anonymous</div>
           )}

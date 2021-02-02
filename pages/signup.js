@@ -41,7 +41,7 @@ export default function Signup() {
                 ref={register({required: 'password is required'})}
                 ></input>
           
-          <button tyep='submit' className='bg-indigo-100 font-bold text-2xl px-5 py-1 rounded-xl text-indigo-500 text-center mt-4'>
+          <button type='submit' className='bg-indigo-100 font-bold text-2xl px-5 py-1 rounded-xl text-indigo-500 text-center mt-4'>
               daftarin
             </button>
 
