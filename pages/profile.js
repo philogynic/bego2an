@@ -18,7 +18,7 @@ export default function Profile() {
             </Link>
             
             {auth.user? (
-                <h2 className='text-l md:text-3xl font-bold text-yellow-400'>
+                <h2 className='text-xl break-words md:text-3xl font-bold text-yellow-400'>
                     {auth.user.email}
                 </h2>
             ) : (
