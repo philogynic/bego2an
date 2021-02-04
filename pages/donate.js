@@ -13,13 +13,13 @@ export default function Donate() {
   
   const onSubmit = handleSubmit(async (formData) => {
     const newDonation = {
-      // donatorId: auth?(auth.user.uid):(null),
-      // donatorEmail: auth?(auth.user.email):(null),
+      donatorId: auth.user?(auth.user.uid):('anon'),
+      donatorEmail: auth.user?(auth.user.email):('anon'),
       text: formData.text,
       donationAmount: formData.donationAmount,
       createdAt: new Date().toISOString()
     }
-
+    console.log(newDonation)
     await createDonation(newDonation)
     Router.push('/dashboard')
 
