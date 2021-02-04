@@ -13,8 +13,8 @@ export default function Donate() {
   
   const onSubmit = handleSubmit(async (formData) => {
     const newDonation = {
-      donatorId: auth.user.uid,
-      donatorEmail: auth.user.email,
+      // donatorId: auth?(auth.user.uid):(null),
+      // donatorEmail: auth?(auth.user.email):(null),
       text: formData.text,
       donationAmount: formData.donationAmount,
       createdAt: new Date().toISOString()
